@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import IntroSection from './components/IntroSection';
 import ServicesSection from './components/ServicesSection';
 import WidgetNote from './components/WidgetNote';
-import DownloadSection from './components/DownloadSection';
 
 export default function App() {
   useAvatarForgeWidget({
@@ -22,8 +21,7 @@ export default function App() {
       <Hero />
       <IntroSection />
       <ServicesSection />
-      <DownloadSection />
-      <WidgetNote />
+<WidgetNote />
     </>
   );
 }
