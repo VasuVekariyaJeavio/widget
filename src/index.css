@@ -1,0 +1,320 @@
+:root {
+  --black: #000000;
+  --cream: #f9f7f2;
+  --text-dark: #1a1a1a;
+  --text-muted: #5c5c5c;
+  --white: #ffffff;
+  --card-pink: #fce8ec;
+  --card-yellow: #fdf6d9;
+  --card-green: #e8f5e9;
+  --card-blue: #e3f2fd;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--cream);
+}
+
+/* ── Header ─────────────────────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem clamp(1.25rem, 4vw, 3rem);
+  background: var(--black);
+}
+
+.logo {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  flex: 1;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 0.85;
+}
+
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.35rem;
+  background: var(--white);
+  color: var(--black);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-nav:hover {
+  filter: brightness(0.97);
+}
+
+/* ── Hero ────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  min-height: min(85vh, 720px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(3rem, 8vw, 5rem) clamp(1.25rem, 4vw, 3rem);
+  background-color: var(--black);
+  background-image: url("/jeavio-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 0;
+  max-width: 52rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero-inner h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.hero-inner p {
+  margin: 0 0 2rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 500;
+  opacity: 0.95;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-hero {
+  display: inline-flex;
+  padding: 0.85rem 1.75rem;
+  background: var(--white);
+  color: var(--black);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.btn-hero:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+/* ── Intro ───────────────────────────────────────────── */
+
+.section {
+  padding: clamp(4rem, 10vw, 6rem) clamp(1.25rem, 4vw, 3rem);
+}
+
+.section-intro {
+  background: var(--cream);
+  text-align: center;
+}
+
+.overline {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.section-intro h2 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.section-intro .lead {
+  margin: 0 auto;
+  max-width: 38rem;
+  font-size: 1.0625rem;
+  color: var(--text-dark);
+}
+
+.section-intro .lead + .lead {
+  margin-top: 1rem;
+}
+
+/* ── Services ────────────────────────────────────────── */
+
+.section-services {
+  background: var(--cream);
+  padding-top: 0;
+}
+
+.section-services h2 {
+  margin: 0 0 2.5rem;
+  text-align: center;
+  font-size: clamp(1.35rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem);
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.5rem;
+  border-radius: 12px;
+  min-height: 100%;
+}
+
+.card--pink   { background: var(--card-pink); }
+.card--yellow { background: var(--card-yellow); }
+.card--green  { background: var(--card-green); }
+.card--blue   { background: var(--card-blue); }
+
+.card-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.card--pink   .card-icon { background: rgba(220, 38, 38, 0.12); }
+.card--yellow .card-icon { background: rgba(217, 119, 6, 0.15); }
+.card--green  .card-icon { background: rgba(22, 163, 74, 0.12); }
+.card--blue   .card-icon { background: rgba(2, 132, 199, 0.12); }
+
+.card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.card p {
+  margin: 0 0 1.5rem;
+  flex: 1;
+  font-size: 0.9375rem;
+  color: #3d3d3d;
+  line-height: 1.55;
+}
+
+.btn-card {
+  align-self: flex-start;
+  padding: 0.5rem 1.1rem;
+  background: var(--white);
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* ── Widget note ─────────────────────────────────────── */
+
+.widget-note {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem clamp(1.25rem, 4vw, 3rem) 4rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.widget-note code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .site-header {
+    justify-content: center;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+  }
+}
